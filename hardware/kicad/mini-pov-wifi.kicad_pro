@@ -29,7 +29,11 @@
     "layer_presets": [],
     "viewports": []
   },
-  "boards": [],
+  "boards": [
+    {
+      "board": "mini-pov-wifi.kicad_pcb"
+    }
+  ],
   "cvpcb": { "equivalence_files": [] },
   "libraries": {
     "pinned_footprint_libs": [],
