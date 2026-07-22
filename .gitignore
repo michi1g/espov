@@ -5,6 +5,12 @@
 .vscode/launch.json
 .vscode/ipch
 
+# KiCad
+hardware/kicad/.history/
+hardware/kicad/~*
+*.lck
+fp-info-cache
+
 # OS
 .DS_Store
 Thumbs.db
