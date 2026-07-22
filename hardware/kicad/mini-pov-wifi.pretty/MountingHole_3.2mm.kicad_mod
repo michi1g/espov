@@ -1,0 +1,8 @@
+(footprint "MountingHole_3.2mm"
+  (version 20240108)
+  (generator "mini-pov-wifi")
+  (descr "Mounting hole 3.2 mm")
+  (tags "mounting hole")
+  (attr exclude_from_pos_files exclude_from_bom)
+  (pad "" np_thru_hole circle (at 0 0 0) (size 3.2 3.2) (drill 3.2) (layers "*.Cu" "*.Mask"))
+)

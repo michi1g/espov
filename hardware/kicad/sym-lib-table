@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "mini-pov-wifi")(type "KiCad")(uri "${KIPRJMOD}/mini-pov-wifi.kicad_sym")(options "")(descr "MiniPOV WiFi local symbols"))
+)

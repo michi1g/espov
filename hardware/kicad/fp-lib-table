@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "mini-pov-wifi")(type "KiCad")(uri "${KIPRJMOD}/mini-pov-wifi.pretty")(options "")(descr "MiniPOV WiFi local footprints"))
+)

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiniPOV WiFi – Editor</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>MiniPOV WiFi</h1>
+    <p class="subtitle">Texte &amp; Bilder für dein POV-Display gestalten</p>
+    <div id="status" class="status">Verbinde…</div>
+    <p class="hint header-hint">WiFi aus? <strong>FLASH-Taste</strong> am Wemos drücken, dann mit MiniPOV-WiFi verbinden.</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <div class="tabs">
+        <button type="button" class="tab active" data-tab="draw">Zeichnen</button>
+        <button type="button" class="tab" data-tab="text">Text</button>
+        <button type="button" class="tab" data-tab="image">Bild</button>
+      </div>
+
+      <div id="tab-draw" class="tab-content active">
+        <div class="toolbar">
+          <label>Breite: <input type="number" id="widthInput" min="8" max="256" value="64"></label>
+          <button type="button" id="btnClear">Leeren</button>
+          <button type="button" id="btnInvert">Invertieren</button>
+        </div>
+        <div id="gridWrap" class="grid-wrap"></div>
+        <p class="hint">Klicken oder ziehen zum Malen. 8 Pixel hoch = 8 LEDs.</p>
+      </div>
+
+      <div id="tab-text" class="tab-content">
+        <label class="field">
+          Text
+          <input type="text" id="textInput" maxlength="32" placeholder="Hallo Welt!">
+        </label>
+        <label class="field">
+          Schriftgröße
+          <select id="fontSize">
+            <option value="5">Klein (5 px)</option>
+            <option value="7" selected>Mittel (7 px)</option>
+          </select>
+        </label>
+        <button type="button" id="btnRenderText">Text einfügen</button>
+      </div>
+
+      <div id="tab-image" class="tab-content">
+        <label class="field">
+          Bild hochladen (PNG/JPG)
+          <input type="file" id="imageInput" accept="image/*">
+        </label>
+        <p class="hint">Das Bild wird auf 8 px Höhe skaliert und in Schwarz/Weiß umgewandelt.</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Vorschau</h2>
+      <canvas id="preview" width="320" height="80"></canvas>
+      <div class="toolbar">
+        <label>Geschwindigkeit (µs): <input type="number" id="speedInput" min="400" max="5000" value="1200" step="100"></label>
+        <label class="checkbox">
+          <input type="checkbox" id="displayEnabled" checked> POV-Wiedergabe aktiv
+        </label>
+      </div>
+      <div class="actions">
+        <button type="button" id="btnLoad" class="secondary">Vom Gerät laden</button>
+        <button type="button" id="btnSave" class="primary">An Gerät senden</button>
+        <button type="button" id="btnWifiOff" class="secondary">WiFi beenden</button>
+      </div>
+      <p id="message" class="message" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
