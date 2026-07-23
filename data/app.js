@@ -354,11 +354,19 @@ document.getElementById('speedInput').addEventListener('change', startPreviewAni
 
 document.addEventListener('mouseup', () => { isPainting = false; });
 
-// Init
+// Init – editor works offline; device APIs only when connected
 initPixels(64);
 buildGrid();
 drawPreviewStatic();
 startPreviewAnim();
-loadStatus();
-loadPattern();
-setInterval(loadStatus, 5000);
+
+const isLocalFile = location.protocol === 'file:';
+if (isLocalFile) {
+  statusEl.textContent = 'Offline-Vorschau · Speichern erst am Gerät';
+  statusEl.className = 'status';
+  showMessage('Zeichnen geht hier. „An Gerät senden“ nur über http://192.168.4.1', '');
+} else {
+  loadStatus();
+  loadPattern();
+  setInterval(loadStatus, 5000);
+}
